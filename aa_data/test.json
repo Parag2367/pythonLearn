@@ -1,0 +1,84 @@
+{
+    "_comments": "Application/Source System Metadata for aacrn",
+    "Jira": "",
+    "azureEnv": "nonprod",
+    "components": [
+        "spl",
+        "adx"
+    ],
+    "dataLayerType": "ELM",
+    "dataProductName": "B2CChannel",
+    "appName": "aacrn",
+    "userManage": [
+        "916722"
+    ],
+    "userReadWrite": [],
+    "userRead": [],
+    "spsType": "A",
+    "aehInfo": {
+        "ehConsumer": "ext",
+        "ehNamespaceType": "prmry",
+        "ehMsgRetention": 7,
+        "ehPartitions": 1,
+        "namespaceName": "ba-n-elm-001-ext-prmry-evhns",
+        "eventHubs": [
+            {
+                "SASPolicy": [
+                    "aacrn_all_logs-evh-manage",
+                    "aacrn_all_logs-evh-send",
+                    "aacrn_all_logs-evh-listen",
+                    "aacrn_all_logs-evh-send-listen"
+                ],
+                "consumerGroups": [
+                    "aacrn_all_logs-evh-nifi",
+                    "aacrn_all_logs-evh-adx"
+                ],
+                "eventHubName": "n-aacrn_all_logs-evh"
+            },
+            {
+                "SASPolicy": [
+                    "aacrn_ba_logs-evh-manage",
+                    "aacrn_ba_logs-evh-send",
+                    "aacrn_ba_logs-evh-listen",
+                    "aacrn_ba_logs-evh-send-listen"
+                ],
+                "consumerGroups": [
+                    "aacrn_ba_logs-evh-nifi",
+                    "aacrn_ba_logs-evh-adx"
+                ],
+                "eventHubName": "n-aacrn_ba_logs-evh"
+            },
+            {
+                "SASPolicy": [
+                    "aacrn_unknown_logs-evh-manage",
+                    "aacrn_unknown_logs-evh-send",
+                    "aacrn_unknown_logs-evh-listen",
+                    "aacrn_unknown_logs-evh-send-listen"
+                ],
+                "consumerGroups": [
+                    "aacrn_unknown_logs-evh-nifi",
+                    "aacrn_unknown_logs-evh-adx"
+                ],
+                "eventHubName": "n-aacrn_unknown_logs-evh"
+            }
+        ],
+        "adGroups": [
+            "L_AAD_SPL_ELM_AACRN_M_N",
+            "L_AAD_SPL_ELM_AACRN_W_N",
+            "L_AAD_SPL_ELM_AACRN_R_N"
+        ]
+    },
+    "adxInfo": {
+        "adxSoftDeleteInDays": 31,
+        "adxHotCacheInDays": 7,
+        "databaseName": "n-b2cchannel-aacrn-applogs-adxdb",
+        "tableName": "ba_logs",
+        "dcName": "n-aacrn-ba-logs-evh-cxn",
+        "webUri": "https://private-orionadxn.eastus.kusto.windows.net",
+        "adGroups": [
+            "L_AAD_ADX_ELM_AACRN_M_N",
+            "L_AAD_ADX_ELM_AACRN_RWX_N",
+            "L_AAD_ADX_ELM_AACRN_R_N"
+        ]
+    }
+}

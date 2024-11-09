@@ -1,0 +1,34 @@
+{
+    "_comments": "Application/Source System Metadata for aacom ()",
+    "Jira": "",
+    "azureEnv": "nonprod",
+    "components": [
+        "spl",
+        "adx"
+    ],
+    "dataLayerType": "ELM",
+    "dataProductName": "web",
+    "appName": "aacom",
+    "region": [
+        "eastus"
+    ],
+    "userManage": [
+        "840521",
+        "785570",
+        "998321 "
+    ],
+    "userReadWrite": [],
+    "userRead": [],
+    "aehSPs": [],
+    "spsType": "A",
+    "aehInfo": {
+        "ehConsumer": "ext",
+        "ehNamespaceType": "prmry",
+        "ehMsgRetention": 7,
+        "ehPartitions": 1
+    },
+    "adxInfo": {
+        "adxSoftDeleteInDays": 31,
+        "adxHotCacheInDays": 7
+    }
+}

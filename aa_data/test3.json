@@ -1,0 +1,92 @@
+{
+    "_comments": "Application/Source System Metadata for aacom ()",
+    "Jira": "",
+    "azureEnv": "nonprod",
+    "components": [
+        "spl",
+        "adx"
+    ],
+    "dataLayerType": "ELM",
+    "dataProductName": "web",
+    "appName": "aacom",
+    "region": [
+        "westus"
+    ],
+    "userManage": [
+        "840521",
+        "785570",
+        "998321 "
+    ],
+    "userReadWrite": [],
+    "userRead": [],
+    "aehSPs": [],
+    "spsType": "A",
+    "aehInfo": {
+        "ehConsumer": "ext",
+        "ehNamespaceType": "prmry",
+        "ehMsgRetention": 7,
+        "ehPartitions": 1,
+        "ehResourceGroup": "ba-n-zweus-orion-spl-rg",
+        "namespaceName.westus": "ba-n-elm-018-ext-scdry-evhns",
+        "eventHubs": [
+            {
+                "SASPolicy": [
+                    "aacom_all_logs-evh-manage",
+                    "aacom_all_logs-evh-send",
+                    "aacom_all_logs-evh-listen",
+                    "aacom_all_logs-evh-send-listen"
+                ],
+                "eventHubName": "n-aacom_all_logs-evh",
+                "consumerGroups": [
+                    "aacom_all_logs-evh-nifi",
+                    "aacom_all_logs-evh-adx"
+                ]
+            },
+            {
+                "SASPolicy": [
+                    "aacom_ba_logs-evh-manage",
+                    "aacom_ba_logs-evh-send",
+                    "aacom_ba_logs-evh-listen",
+                    "aacom_ba_logs-evh-send-listen"
+                ],
+                "eventHubName": "n-aacom_ba_logs-evh",
+                "consumerGroups": [
+                    "aacom_ba_logs-evh-nifi",
+                    "aacom_ba_logs-evh-adx"
+                ]
+            },
+            {
+                "SASPolicy": [
+                    "aacom_unknown_logs-evh-manage",
+                    "aacom_unknown_logs-evh-send",
+                    "aacom_unknown_logs-evh-listen",
+                    "aacom_unknown_logs-evh-send-listen"
+                ],
+                "eventHubName": "n-aacom_unknown_logs-evh",
+                "consumerGroups": [
+                    "aacom_unknown_logs-evh-nifi",
+                    "aacom_unknown_logs-evh-adx"
+                ]
+            }
+        ],
+        "adGroups": [
+            "L_AAD_SPL_ELM_AACOM_M_N",
+            "L_AAD_SPL_ELM_AACOM_W_N",
+            "L_AAD_SPL_ELM_AACOM_R_N"
+        ]
+    },
+    "adxInfo": {
+        "adxSoftDeleteInDays": 31,
+        "adxHotCacheInDays": 7,
+        "adxResourceGroup": "ba-n-zweus-orion-adx-rg",
+        "databaseName": "n-web-aacom-applogs-adxdb",
+        "tableName": "ba_logs",
+        "dcName": "n-aacom-ba-logs-evh-cxn",
+        "webUri.westus": "https://private-orionadxweusn.westus.kusto.windows.net",
+        "adGroups": [
+            "L_AAD_ADX_ELM_AACOM_M_N",
+            "L_AAD_ADX_ELM_AACOM_RWX_N",
+            "L_AAD_ADX_ELM_AACOM_R_N"
+        ]
+    }
+}
